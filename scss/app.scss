@@ -1,2 +1,57 @@
 @import "settings";
 @import "foundation";
+
+html, body{
+  height: 100%;
+}
+
+body {
+  background: rgba(128, 0, 128, .25);
+  position: relative;
+}
+
+$mainMaxWidth: 52em;
+
+#main{
+  background: rgba(64,64,0,.25);
+  width: $mainMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gutter-wrapper {
+  position: absolute;
+  top: $topbar-height;
+  bottom: 0;
+}
+
+#leftGutterWrapper {
+  padding-right: $mainMaxWidth/2;
+  left: 0;
+  right: 50%;
+}
+
+#rightGutterWrapper {
+  left: 50%;
+  right: 0;
+  padding-left: $mainMaxWidth/2;
+}
+
+.gutter {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(0,255,0,.5);
+
+  .branch {
+    position: absolute;
+    background: rgba(0,0,255,.5);
+  }
+}
+
+@media #{$medium-up} {
+}
+
+@media #{$large-up} {
+}
+
