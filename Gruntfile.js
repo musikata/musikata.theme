@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         },
         files: {
           'css/app.css': 'scss/app.scss'
-        }        
+        }
       }
     },
 
@@ -23,12 +23,18 @@ module.exports = function(grunt) {
         files: 'scss/**/*.scss',
         tasks: ['sass']
       }
+    },
+
+    connect: {
+      port: 9000
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('build', ['sass']);
   grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('serve', ['build','connect', 'watch']);
 }
