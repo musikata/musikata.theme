@@ -1,58 +1,47 @@
 @import "settings";
 @import "foundation";
 
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+#topBar{
+  @include box-shadow(0, 2px, 2px, #ccc);
+}
+
 html, body{
   height: 100%;
 }
 
 body {
-  background: rgba(128, 0, 128, .25);
+  background-color: white;
+  background: url("../img.test/canvas.png");
   position: relative;
 }
 
-$mainMaxWidth: 40em;
+#logo{
+  height: 35px;
+}
 
-#main{
-  background: rgba(64,64,0,.25);
+#app{
+  padding: 1em;
+  color: #333;
+  background-color: #fcfcfc;
   min-width: 20rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.gutter-wrapper {
-  display: none;
-  position: absolute;
-  top: $topbar-height;
-  bottom: 0;
-}
-
-#leftGutterWrapper {
-  padding-right: $mainMaxWidth/2;
-  left: 0;
-  right: 50%;
-}
-
-#rightGutterWrapper {
-  left: 50%;
-  right: 0;
-  padding-left: $mainMaxWidth/2;
-}
-
-.gutter {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  background: rgba(0,255,0,.5);
-
-  .branch {
-    display: none;
-    position: absolute;
-    background: rgba(0,0,255,.5);
-  }
-}
-
 @media #{$small-only} {
-  #main{
+  #app{
     width: 100%;
   }
 
@@ -62,17 +51,8 @@ $mainMaxWidth: 40em;
 }
 
 @media #{$medium-up} {
-  #main {
-    width: $mainMaxWidth;
-  }
-  .gutter-wrapper{
-    display: block;
+  #app {
+    width: 40em;
+    margin-top: 1em;
   }
 }
-
-@media #{$large-up} {
-  .gutter .branch {
-    display: block;
-  }
-}
-
