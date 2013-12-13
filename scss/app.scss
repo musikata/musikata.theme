@@ -1,27 +1,10 @@
 @import "settings";
 @import "foundation";
 @import "utils";
-
-@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
-  }
-}
-
-@mixin rounded($radius: 0.5em) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
-}
+@import "components/progressBar";
 
 #topBar{
-  @include box-shadow(0, 2px, 2px, #ccc);
+  @include box-shadow(0 2px 2px #ccc);
 }
 
 html, body{
@@ -53,7 +36,7 @@ body {
   margin-right: auto;
   @include round-top-corners(8px);
   @include round-bottom-corners(8px);
-  @include box-shadow(0, 2px, 2px, rgba(0,0,0,.5));
+  @include box-shadow(0 2px 2px rgba(0,0,0,.5));
 
   .app-body, .app-header, .app-footer{
     border: thin solid #bbb;
@@ -61,7 +44,7 @@ body {
   }
 
   .app-header {
-    @include box-shadow(0, 2px, 3px, rgba(0,0,0, .06));
+    @include box-shadow(0 2px 3px rgba(0,0,0, .06));
     @include round-top-corners(8px);
     @include linear-gradient(#F5F2EF, #EEEAE7);
   }
@@ -74,7 +57,7 @@ body {
 
   .app-footer{
     padding: .5em;
-    @include box-shadow(0, -2px, 3px, rgba(0,0,0,.06));
+    @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
     @include round-bottom-corners(8px);
     @include linear-gradient(#F5F2EF, #EEEAE7);
   }

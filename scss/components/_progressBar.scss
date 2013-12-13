@@ -1,0 +1,7 @@
+@import "../utils";
+
+.progress-bar {
+  @include round-left-corners();
+  @include round-right-corners();
+  @include box-shadow(inset 0 3px 6px rgba(0,0,0,.15), 0 1px 0 #fff);
+}
