@@ -13,21 +13,24 @@
 
   li {
 
-    &:first-child{
-      @include round-left-corners();
-    }
-
     list-style: none;
     float: left;
     width: 16px;
     height: 12px;
-    @include linear-gradient(rgba(244,61,74,1), rgba(191,47,57,1));
-    border: 1px solid rgba(244,61,74,1);
+    border: thin solid #ddd;
 
+    &:first-child{
+      @include round-left-corners();
+    }
     &:last-child{
       @include round-right-corners();
     }
 
+    &.done{
+      @include linear-gradient(rgba(244,61,74,1), rgba(191,47,57,1));
+      border: thin solid rgba(244,61,74,1);
+      border-right: thin solid #ddd;
+    }
   }
 
 }
