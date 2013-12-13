@@ -39,6 +39,11 @@ body {
 
 #logo{
   height: 35px;
+  width: 200px;
+  background-image: url('../img.test/logo.png');
+  background-position: left top;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 #app{
