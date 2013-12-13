@@ -30,7 +30,10 @@ html, body{
 
 body {
   background-color: white;
-  background: url("../img/canvas.png");
+  background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
+  background-size: auto, auto, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left 180px, right 50px, center top;
   position: relative;
 }
 
