@@ -1,7 +1,10 @@
 @import "settings";
 @import "foundation";
 @import "utils";
+
+@import "components/exerciseDeckRunner";
 @import "components/progressBar";
+@import "components/healthBar";
 
 #topBar{
   @include box-shadow(0 2px 2px #ccc);
@@ -44,12 +47,14 @@ body {
   }
 
   .app-header {
+    @include clearfix;
     @include box-shadow(0 2px 3px rgba(0,0,0, .06));
     @include round-top-corners(8px);
     @include linear-gradient(#F5F2EF, #EEEAE7);
   }
 
   .app-body {
+    @include clearfix;
     background: white;
     border-top: none;
     border-bottom: none;
@@ -57,6 +62,7 @@ body {
   }
 
   .app-footer{
+    @include clearfix;
     padding: .5em;
     @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
     @include round-bottom-corners(8px);

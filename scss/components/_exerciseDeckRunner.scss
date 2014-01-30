@@ -1,0 +1,11 @@
+@import "../utils";
+
+.exercise-deck-runner{
+  .progress-container{
+    float: left;
+  }
+
+  .health-container {
+    float: right;
+  }
+}
