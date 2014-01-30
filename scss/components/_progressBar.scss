@@ -26,7 +26,7 @@
       @include round-right-corners();
     }
 
-    &.done{
+    &.completed {
       @include linear-gradient(rgba(244,61,74,1), rgba(191,47,57,1));
       border: thin solid rgba(244,61,74,1);
       border-right: thin solid #ddd;
