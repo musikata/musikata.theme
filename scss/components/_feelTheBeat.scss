@@ -1,0 +1,71 @@
+@import "../utils";
+@import "../settings";
+
+.feel-the-beat{
+
+  .drum {
+    $radius: rem-calc(150);
+    $overlayRadius: $radius * .8;
+    width: $radius*2;
+    height: $radius*2;
+    @include round-corners($radius);
+    background-image: url('../img/feelTheBeat/drum.jpg');
+    background-size: 100% 100%;
+    position: relative;
+
+    .overlay {
+      $padding: ($radius - $overlayRadius);
+      position: absolute;
+      top: $padding;
+      left: $padding;
+      opacity: 0;
+      width: $overlayRadius*2;
+      height: $overlayRadius*2;
+      @include round-corners($overlayRadius);
+      background: $primary-color;
+    }
+
+    &.disabled {
+      .overlay {
+        opacity: .75;
+        background: gray;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      .overlay {
+        opacity: .2;
+      }
+    }
+
+    &.tapping{
+      .overlay {
+        opacity: .5;
+      }
+    }
+  }
+
+  .results {
+    svg {
+      width: rem-calc(300);
+      height: rem-calc(150);
+    }
+
+    .tap, .beat {
+      stroke-width: 4;
+      stroke: black;
+    }
+
+    .tap.fail {
+      stroke: red;
+    }
+
+    .link {
+      stroke-width: 1;
+      stroke: black;
+      stroke-dasharray: 2,2; 
+    }
+  }
+
+}
