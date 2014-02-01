@@ -1,5 +1,6 @@
 @import "../utils";
 @import "../settings";
+@import "../foundation-icons";
 
 .feel-the-beat{
 
@@ -47,24 +48,83 @@
   }
 
   .results {
-    svg {
-      width: rem-calc(300);
-      height: rem-calc(150);
+    .figure {
+      position: relative;
+      width: 100%;
+      height: rem-calc(250);
+
+      > div, svg{
+        position: absolute;
+      }
+    }
+
+    .threshold {
+      top: 8%;
+      height: 72%;
+      border: thin solid #ccc;
     }
 
     .tap, .beat {
-      stroke-width: 4;
-      stroke: black;
+      width: rem-calc(5);
+      margin-left: rem-calc(-2.5);
+      height: 25%;
     }
 
-    .tap.fail {
-      stroke: red;
+    .beat {
+      top: 10%;
+      background: black;
+    }
+
+    .tap {
+      top: 45%;
+      &.pass {
+        background: green;
+      }
+      &.fail {
+        background: red;
+      }
     }
 
     .link {
-      stroke-width: 1;
-      stroke: black;
-      stroke-dasharray: 2,2; 
+      top: 35%;
+      height: 10%;
+      line {
+        stroke-width: 1;
+        stroke: black;
+        stroke-dasharray: 2,2; 
+      }
+    }
+
+    .result {
+      top: 0;
+      font-size: rem-calc(10);
+      $radius: 1em;
+      width: $radius*2;
+      height: $radius*2;
+      @include round-corners($radius);
+      border: thin solid #ccc;
+      text-align: center;
+      margin-left: -$radius;
+
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 2em;
+      }
+
+      &.pass {
+        i {
+          @include fi-heart;
+          color: green;
+        }
+      }
+
+      &.fail {
+        i {
+          @include fi-heart;
+          color: red;
+        }
+      }
     }
   }
 
