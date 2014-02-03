@@ -48,6 +48,21 @@
   }
 
   .results {
+
+    $pass_color: #68e86b;
+    $fail_color: #df2421;
+
+    $icon_padding: 2.5%;
+    $icon_height: 10%;
+    $icon_outer_height: 2*$icon_padding + $icon_height;
+    $threshold_padding: 5%;
+    $threshold_height: 100% - $icon_outer_height -  2*$threshold_padding;
+    $mark_width: rem-calc(8);
+    $mark_height: 33%;
+    $mark_padding: 2%;
+    $link_top: $icon_outer_height + $threshold_padding + $mark_padding + $mark_height;
+    $link_height: $threshold_height - 2*$mark_height - 2*$mark_padding;
+
     .figure {
       position: relative;
       width: 100%;
@@ -59,35 +74,36 @@
     }
 
     .threshold {
-      top: 8%;
-      height: 72%;
-      border: thin solid #ccc;
+      top: $icon_outer_height + $threshold_padding;
+      height: $threshold_height;
+      border: thin dashed #ccc;
     }
 
     .tap, .beat {
-      width: rem-calc(5);
-      margin-left: rem-calc(-2.5);
-      height: 25%;
+      width: $mark_width;
+      margin-left: -$mark_width/2;
+      height: $mark_height;
+      //border: thin solid #333;
     }
 
     .beat {
-      top: 10%;
-      background: black;
+      top: $icon_outer_height + $threshold_padding + $mark_padding;
+      background: #3d1c1c;
     }
 
     .tap {
-      top: 45%;
+      bottom: $mark_padding + $threshold_padding;
       &.pass {
-        background: green;
+        background: $pass_color;
       }
       &.fail {
-        background: red;
+        background: $fail_color;
       }
     }
 
     .link {
-      top: 35%;
-      height: 10%;
+      top: $link_top;
+      height: $link_height;
       line {
         stroke-width: 1;
         stroke: black;
@@ -96,33 +112,35 @@
     }
 
     .result {
-      top: 0;
-      font-size: rem-calc(10);
+      top: $icon_padding;
+      line-height: rem-calc($icon_height/2);
       $radius: 1em;
       width: $radius*2;
       height: $radius*2;
       @include round-corners($radius);
-      border: thin solid #ccc;
+      //border: thin solid #ccc;
       text-align: center;
       margin-left: -$radius;
 
       i {
+        $size: 2em - .2em;
         display: inline-block;
         vertical-align: middle;
-        line-height: 2em;
+        line-height: $size;
+        font-size: $size;
       }
 
       &.pass {
         i {
           @include fi-heart;
-          color: green;
+          color: $pass_color;
         }
       }
 
       &.fail {
         i {
           @include fi-heart;
-          color: red;
+          color: $fail_color;
         }
       }
     }
