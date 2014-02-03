@@ -35,3 +35,17 @@
     content: "\f159"; 
   }
 }
+
+@mixin fi-check {
+  @include fi;
+  &:before { 
+    content: "\f126"; 
+  }
+}
+
+@mixin fi-x{
+  @include fi;
+  &:before { 
+    content: "\f217"; 
+  }
+}

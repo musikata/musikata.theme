@@ -49,101 +49,112 @@
 
   .results {
 
+    $figure_height: rem-calc(250);
+    $icon_size: rem-calc(15);
+    $icon_padding: rem-calc(4);
+    $timeline_height: $figure_height - $icon_size - 2* $icon_padding; 
+
     $pass_color: #68e86b;
     $fail_color: #df2421;
 
-    $icon_padding: 2.5%;
-    $icon_size: 10%;
-    $icon_outer_height: 2*$icon_padding + $icon_size;
-
     $threshold_padding: 5%;
-    $threshold_height: 100% - $icon_outer_height -  2*$threshold_padding;
+    $threshold_height: 100% - 2*$threshold_padding;
     $mark_width: rem-calc(8);
     $mark_height: 33%;
     $mark_padding: 2%;
-    $link_top: $icon_outer_height + $threshold_padding + $mark_padding + $mark_height;
+    $link_top: $threshold_padding + $mark_padding + $mark_height;
     $link_height: $threshold_height - 2*$mark_height - 2*$mark_padding;
 
     .figure {
+
       position: relative;
       width: 100%;
-      height: rem-calc(250);
+      height: $figure_height;
 
-      > div, svg{
-        position: absolute;
-      }
-    }
+      .result-indicators {
+        position: relative;
+        height: $icon_size + 2*$icon_padding;
 
-    .threshold {
-      top: $icon_outer_height + $threshold_padding;
-      height: $threshold_height;
-      border: thin dashed #ccc;
-    }
+        .result {
+          $radius: $icon_size;
+          position: absolute;
+          font-size: $icon_size;
+          width: $radius*2;
+          height: $radius*2;
+          @include round-corners($radius);
+          text-align: center;
+          margin-left: -$radius;
 
-    .tap, .beat {
-      width: $mark_width;
-      margin-left: -$mark_width/2;
-      height: $mark_height;
-      //border: thin solid #333;
-    }
+          i {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 2em;
+          }
 
-    .beat {
-      top: $icon_outer_height + $threshold_padding + $mark_padding;
-      background: #3d1c1c;
-    }
+          &.pass {
+            i {
+              @include fi-check;
+              color: $pass_color;
+            }
+          }
 
-    .tap {
-      bottom: $mark_padding + $threshold_padding;
-      &.pass {
-        background: $pass_color;
-      }
-      &.fail {
-        background: $fail_color;
-      }
-    }
-
-    .link {
-      top: $link_top;
-      height: $link_height;
-      line {
-        stroke-width: 1;
-        stroke: black;
-        stroke-dasharray: 2,2; 
-      }
-    }
-
-    .result {
-      $size: rem-calc($icon_size);
-      top: $icon_padding;
-      $radius: $size;
-      width: $radius*2;
-      height: $radius*2;
-      @include round-corners($radius);
-      border: thin solid gray;
-      text-align: center;
-      margin-left: -$radius;
-      font-size: $size;
-
-      i {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 2em;
-      }
-
-      &.pass {
-        i {
-          @include fi-heart;
-          color: $pass_color;
+          &.fail {
+            i {
+              @include fi-x;
+              color: $fail_color;
+            }
+          }
         }
       }
 
-      &.fail {
-        i {
-          @include fi-heart;
-          color: $fail_color;
+      .timeline {
+        position: relative;
+        height: $timeline_height;
+
+        > div, svg{
+          position: absolute;
         }
+
+        .threshold {
+          top: $threshold_padding;
+          height: $threshold_height;
+          border: thin dashed #666;
+        }
+
+        .tap, .beat {
+          width: $mark_width;
+          margin-left: -$mark_width/2;
+          height: $mark_height;
+          //border: thin solid #333;
+        }
+
+        .beat {
+          top: $threshold_padding + $mark_padding;
+          background: #3d1c1c;
+        }
+
+        .tap {
+          bottom: $mark_padding + $threshold_padding;
+          &.pass {
+            background: $pass_color;
+          }
+          &.fail {
+            background: $fail_color;
+          }
+        }
+
+        .link {
+          top: $link_top;
+          height: $link_height;
+          line {
+            stroke-width: 1;
+            stroke: black;
+            stroke-dasharray: 2,2; 
+          }
+        }
+
       }
     }
+
   }
-
 }
