@@ -4,6 +4,40 @@
 
 .feel-the-beat{
 
+  .tap-view{
+    display: flex;
+
+    > div {
+      flex: 1 1 50%;
+      align-self: stretch;
+    }
+
+    .text-container {
+      order: 0;
+    }
+
+    .drum-container {
+      order: 1;
+    }
+  }
+
+  .instructions {
+    width: 65%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 10%;
+    font-style: italic;
+
+    li {
+      margin: 1em;
+      @include transition(all, 1s, ease-in-out);
+    }
+
+    .disabled{
+      color: #bbb;
+    }
+  }
+
   .drum {
     $radius: rem-calc(150);
     $overlayRadius: $radius * .8;
@@ -64,6 +98,16 @@
     $mark_padding: 2%;
     $link_top: $threshold_padding + $mark_padding + $mark_height;
     $link_height: $threshold_height - 2*$mark_height - 2*$mark_padding;
+
+    i.pass {
+      @include fi-check;
+      color: $pass_color;
+    }
+
+    i.fail {
+      @include fi-x;
+      color: $fail_color;
+    }
 
     .figure {
 
