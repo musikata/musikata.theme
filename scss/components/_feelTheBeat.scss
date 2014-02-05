@@ -23,14 +23,14 @@
 
   .instructions {
     width: 65%;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 10%;
+    margin-bottom: 10%;
     margin-left: 10%;
     font-style: italic;
 
     li {
       margin: 1em;
-      @include transition(all, 1s, ease-in-out);
+      @include transition(all, .5s, ease-in-out);
     }
 
     .disabled{
@@ -38,45 +38,65 @@
     }
   }
 
-  .drum {
-    $radius: rem-calc(150);
-    $overlayRadius: $radius * .8;
-    width: $radius*2;
-    height: $radius*2;
-    @include round-corners($radius);
-    background-image: url('../img/feelTheBeat/drum.jpg');
-    background-size: 100% 100%;
-    position: relative;
+  .drum-container{
+    text-align: center;
 
-    .overlay {
-      $padding: ($radius - $overlayRadius);
-      position: absolute;
-      top: $padding;
-      left: $padding;
-      opacity: 0;
-      width: $overlayRadius*2;
-      height: $overlayRadius*2;
-      @include round-corners($overlayRadius);
-      background: $primary-color;
+    .action-button {
+      margin-top: 1em;
+      @include round-corners(rem-calc(8));
     }
 
-    &.disabled {
-      .overlay {
-        opacity: .75;
-        background: gray;
+    .drum {
+      $radius: rem-calc(150);
+      $overlayRadius: $radius * .8;
+      $borderWidth: rem-calc(10);
+      width: $radius*2;
+      height: $radius*2;
+      @include round-corners($radius);
+      background-image: url('../img/feelTheBeat/drum.jpg');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      position: relative;
+      border: $borderWidth solid transparent;
+
+      &.prepare-recording {
+        border-color: yellow;
       }
-    }
 
-    &:hover {
-      cursor: pointer;
-      .overlay {
-        opacity: .2;
+      &.recording {
+        border-color: $fail_color;
       }
-    }
 
-    &.tapping{
       .overlay {
-        opacity: .5;
+        $padding: ($radius - $overlayRadius - $borderWidth);
+        position: absolute;
+        top: $padding;
+        left: $padding;
+        opacity: 0;
+        width: $overlayRadius*2;
+        height: $overlayRadius*2;
+        @include round-corners($overlayRadius);
+        background: $primary-color;
+      }
+
+      &.disabled {
+        .overlay {
+          opacity: .75;
+          background: gray;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        .overlay {
+          opacity: .2;
+        }
+      }
+
+      &.tapping{
+        .overlay {
+          opacity: .5;
+        }
       }
     }
   }

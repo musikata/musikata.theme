@@ -90,3 +90,11 @@ body {
     margin-top: 1em;
   }
 }
+
+.sensei-image {
+  height: rem-calc(200);
+  background-image: url('../img.test/cricket.gif');
+  background-size: auto 80%;
+  background-repeat: no-repeat;
+  background-position: 45% 10%;
+}
