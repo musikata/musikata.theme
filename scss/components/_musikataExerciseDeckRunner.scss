@@ -1,0 +1,21 @@
+@import "../utils";
+@import "../settings";
+
+.musikata-exercise-deck-runner{
+  .fail-view {
+    text-align: center;
+
+    h3 {
+      color: $fail_color;
+    }
+
+    .sensei {
+      height: rem-calc(250);
+      background-image: url('../img.test/cricket.gif');
+      background-size: auto 80%;
+      background-repeat: no-repeat;
+      background-position: 45% 10%;
+    }
+
+  }
+}

@@ -88,9 +88,6 @@
     $icon_padding: rem-calc(4);
     $timeline_height: $figure_height - $icon_size - 2* $icon_padding; 
 
-    $pass_color: #68e86b;
-    $fail_color: #df2421;
-
     $threshold_padding: 5%;
     $threshold_height: 100% - 2*$threshold_padding;
     $mark_width: rem-calc(8);
