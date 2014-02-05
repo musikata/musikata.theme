@@ -2,11 +2,11 @@
 @import "../settings";
 
 .musikata-exercise-deck-runner{
-  .fail-view {
+  .pass-view,.fail-view {
     text-align: center;
 
     h3 {
-      color: $fail_color;
+      @include round-corners(rem-calc(8));
     }
 
     .sensei {
@@ -16,6 +16,18 @@
       background-repeat: no-repeat;
       background-position: 45% 10%;
     }
+  }
 
+  .pass-view {
+    h3 {
+      background-color: $pass_color;
+    }
+  }
+
+  .fail-view {
+    h3 {
+      background-color: $fail_color;
+      color: white;
+    }
   }
 }
