@@ -106,6 +106,19 @@
       color: $fail_color;
     }
 
+    .text {
+      text-align: center;
+      @include round-corners(rem-calc(8));
+      &.pass {
+        background-color: $pass_color;
+      }
+
+      &.fail {
+        background-color: $fail_color;
+        color: white;
+      }
+    }
+
     .figure {
 
       position: relative;
