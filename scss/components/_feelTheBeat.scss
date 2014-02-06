@@ -49,7 +49,6 @@
     .drum {
       $radius: rem-calc(150);
       $overlayRadius: $radius * .8;
-      $borderWidth: rem-calc(10);
       width: $radius*2;
       height: $radius*2;
       @include round-corners($radius);
@@ -57,18 +56,9 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       position: relative;
-      border: $borderWidth solid transparent;
-
-      &.prepare-recording {
-        border-color: yellow;
-      }
-
-      &.recording {
-        border-color: $fail_color;
-      }
 
       .overlay {
-        $padding: ($radius - $overlayRadius - $borderWidth);
+        $padding: ($radius - $overlayRadius);
         position: absolute;
         top: $padding;
         left: $padding;
