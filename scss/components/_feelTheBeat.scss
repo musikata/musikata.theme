@@ -2,21 +2,36 @@
 @import "../settings";
 @import "../foundation-icons";
 
-.feel-the-beat{
+.feel-the-beat-exercise{
+
+  > .body-region{
+    height: 100%;
+    width: 100%;
+  }
 
   .tap-view{
+    height: 100%;
+    width: 100%;
     display: flex;
+
+    @media #{$landscape} {
+      flex-direction: row;
+    }
+
+    @media #{$portrait} {
+      flex-direction: column;
+    }
 
     > div {
       flex: 1 1 50%;
       align-self: stretch;
     }
 
-    .text-container {
+    .text-region {
       order: 0;
     }
 
-    .drum-container {
+    .drum-region {
       order: 1;
     }
   }
@@ -38,19 +53,17 @@
     }
   }
 
-  .drum-container{
-    text-align: center;
-
-    .action-button {
-      margin-top: 1em;
-      @include round-corners(rem-calc(8));
-    }
-
+  .drum-region{
+    height: 100%;
+    position: relative;
     .drum {
-      $radius: rem-calc(150);
+      $drum_relative_size: .92;
+      $radius: ($min_slide_size * $drum_relative_size)/2.0;
       $overlayRadius: $radius * .8;
       width: $radius*2;
       height: $radius*2;
+      margin: auto;
+      margin-top: 100% * ((1 - $drum_relative_size)/2) * .62 ;
       @include round-corners($radius);
       background-image: url('../img/feelTheBeat/drum.jpg');
       background-size: 100% 100%;

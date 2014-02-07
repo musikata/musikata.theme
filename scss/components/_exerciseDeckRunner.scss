@@ -3,15 +3,20 @@
 
 .exercise-deck-runner{
 
-  .progress-container{
+  .deck, .slide-region, .slide, .exercise-region, .exercise {
+    height: 100%;
+    width: 100%;
+  }
+
+  .progress-region{
     float: left;
   }
 
-  .health-container {
+  .health-region {
     float: right;
   }
 
-  .nav-container {
+  .nav-region {
     button {
       $padding: rem-calc(5);
       $bg: $primary-color;
