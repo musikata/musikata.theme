@@ -175,6 +175,7 @@
           @include round-corners($radius);
           text-align: center;
           margin-left: -$radius;
+          top: inherit !important;
 
           i {
             display: inline-block;
@@ -210,25 +211,26 @@
         }
 
         .threshold {
-          top: $threshold_padding;
-          height: $threshold_height;
+          top: $threshold_padding !important;
+          height: $threshold_height !important;
           border: thin dashed #666;
         }
 
         .tap, .beat {
-          width: $mark_width;
+          width: $mark_width !important;
           margin-left: -$mark_width/2;
-          height: $mark_length;
-          //border: thin solid #333;
+          height: $mark_length !important;
         }
 
         .beat {
-          top: $threshold_padding + $mark_padding;
+          top: $threshold_padding + $mark_padding !important;
+          bottom: inherit !important;
           background: #3d1c1c;
         }
 
         .tap {
-          bottom: $mark_padding + $threshold_padding;
+          top: inherit !important;
+          bottom: $mark_padding + $threshold_padding !important;
           &.pass {
             background: $pass_color;
           }
@@ -238,8 +240,8 @@
         }
 
         .link {
-          top: $link_top;
-          height: $link_height;
+          top: $link_top !important;
+          height: $link_height !important;
           line {
             stroke-width: 1;
             stroke: black;
