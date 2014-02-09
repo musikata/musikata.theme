@@ -2,6 +2,23 @@
 @import "../settings";
 
 .musikata-exercise-deck-runner{
+
+  .app-body {
+    position: relative;
+    .deck {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      .slide-region, .slide {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
   .pass-view,.fail-view {
     text-align: center;
 

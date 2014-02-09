@@ -1,49 +1,83 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Foundation | Welcome</title>
-        <link rel="stylesheet" href="css/app.css" />
-        <script src="bower_components/modernizr/modernizr.js"></script>
-    </head>
-    <body>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Foundation | Welcome</title>
+<link rel="stylesheet" href="css/app.css" />
+<script src="bower_components/modernizr/modernizr.js"></script>
 
-        <nav id="topBar" class="top-bar">
-            <ul class="title-area">
-                <li class="name">
-                    <h1>
-                        <a href="#">
-                            <img id="logo" src="img.test/logo.png">
-                        </a>
-                    </h1>
-                </li>
-            </ul>
-        </nav>
+<style>
+.intro-slide{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-        <div id="app">
+.intro-slide > * {
+    flex: 1 1 auto;
+}
+</style>
 
+</head>
+<body>
+
+<div id="body-container">
+
+    <nav id="topBar" class="top-bar">
+        <ul class="title-area">
+            <li class="name">
+            <h1>
+                <a id="logo" href="#">
+                    <img src="../img.test/logo.png">
+                </a>
+            </h1>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div class="app feel-the-beat-app exercise-deck-runner musikata-exercise-deck-runner" id="content">
             <header class="app-header">
-                Header
             </header>
 
-            <section class="app-body">
-                <p>"What! how can you see better of a dark night than anybody else, never mind how foolish?"</p>
-
-                <p>"Here!" cried Starbuck, seizing Stubb by the shoulder, and pointing his hand towards the weather bow, "markest thou not that the gale comes from the eastward, the very course Ahab is to run for Moby Dick? the very course he swung to this day noon? now mark his boat there; where is that stove? In the stern-sheets, man; where he is wont to stand&mdash;his stand-point is stove, man! Now jump overboard, and sing away, if thou must!</p>
-
-                <p>"I don't half understand ye: what's in the wind?"</p>
-
-                <p>"Yes, yes, round the Cape of Good Hope is the shortest way to Nantucket," soliloquized Starbuck suddenly, heedless of Stubb's question. "The gale that now hammers at us to stave us, we can turn it into a fair wind that will drive us towards home. Yonder, to windward, all is blackness of doom; but to leeward, homeward&mdash;I see it lightens up there; but not with the lightning."</p>
+            <section class="app-body body-region">
+                <div class="deck">
+                    <div class="slide-region">
+                        <div class="slide">
+                            <div class="intro-slide">
+                                <h3>The Sound of One Hand Clapping</h3>
+                                <p>The goal of this kata is to help you feel the beat.</p>
+                                <div class="sensei-image"></div>
+                                <p>Ready? Let's go!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <footer class="app-footer">
-                Footer
+                <div class="nav-region"><div><button>start</button></div></div>
             </footer>
         </div>
+    </div>
+</div>
 
-        <script src="bower_components/jquery/jquery.min.js"></script>
-        <script src="bower_components/foundation/js/foundation.min.js"></script>
-        <script src="js/app.js"></script>
-    </body>
+<div style="display:none;">
+    <div id="introSlide-1">
+        <div class="intro-slide">
+            <h3>The Sound of One Hand Clapping</h3>
+            <p>The goal of this kata is to help you feel the beat.</p>
+            <div class="sensei-image"></div>
+            <p>Ready? Let's go!</p>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/jquery/jquery.min.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="js/app.js"></script>
+</body>
 </html>

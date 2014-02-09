@@ -4,14 +4,17 @@
 @import "utils";
 @import "foundation-icons";
 
+@import "components/sensei";
+@import "components/topBar";
+@import "components/appFrame";
 @import "components/exerciseDeckRunner";
 @import "components/musikataExerciseDeckRunner";
 @import "components/progressBar";
 @import "components/healthBar";
 @import "components/feelTheBeat";
 
-#topBar{
-  @include box-shadow(0 2px 2px #ccc);
+#body-container {
+  display: 
 }
 
 html, body{
@@ -20,81 +23,78 @@ html, body{
 
 body {
   background-color: white;
+  position: relative;
+}
+
+#body-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#topBar {
+  flex: 0 0 auto;
+}
+
+#main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
   background-size: auto, auto, 100% 100%;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: left 180px, right 50px, center top;
-  position: relative;
 }
 
-#logo{
-  height: 35px;
-  width: 200px;
-  background-image: url('../img.test/logo.png');
-  background-position: left top;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
+#main {
+  &:before, &:after {
+    content: "";
+    flex: 1 1 0;
+    height: 100%;
+  }
+  &:before {
+    max-height: 1em;
+  }
+  &:after {
+    max-height: 2%;
+  }
 }
 
-#app{
-  color: #333;
-  min-width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
-  @include round-top-corners(8px);
-  @include round-bottom-corners(8px);
-  @include box-shadow(0 2px 2px rgba(0,0,0,.5));
+#content {
+  flex: 1 1 auto;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+}
 
-  .app-body, .app-header, .app-footer{
-    border: thin solid #bbb;
-    padding: .5em;
+@media #{$portrait}{
+  #body-container{
+    min-height: rem-calc(480);
+    min-width: rem-calc(320);
   }
+}
 
-  .app-header {
-    @include clearfix;
-    @include box-shadow(0 2px 3px rgba(0,0,0, .06));
-    @include round-top-corners(8px);
-    @include linear-gradient(#F5F2EF, #EEEAE7);
-  }
-
-  .app-body {
-    @include clearfix;
-    background: white;
-    border-top: none;
-    border-bottom: none;
-    min-height: 255px;
-  }
-
-  .app-footer{
-    @include clearfix;
-    padding: .5em;
-    @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
-    @include round-bottom-corners(8px);
-    @include linear-gradient(#F5F2EF, #EEEAE7);
+@media #{$landscape} {
+  #body-container {
+    min-height: rem-calc(320);
+    min-width: rem-calc(480);
   }
 }
 
 @media #{$small-only} {
-  #app{
-    width: 100%;
-  }
-
-  .gutter-wrapper{
-    display: none;
+  #content {
+    max-width: 100%;
   }
 }
 
 @media #{$medium-up} {
-  #app {
-    width: 40em;
-    margin-top: 1em;
+  #main:before, #main:after {
+    min-height: 1%;
   }
-}
-
-.sensei-image {
-  height: rem-calc(200);
-  background-image: url('../img.test/cricket.gif');
-  background-size: auto 80%;
-  background-repeat: no-repeat;
-  background-position: 45% 10%;
+  #content {
+    max-width: 40em;
+  }
 }
