@@ -22,6 +22,7 @@
 
 .app-footer{
   @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
+  height: 4em;
 }
 
 .app-body {
@@ -30,6 +31,7 @@
   border-bottom: none;
 }
 
+// Responsive styling.
 .app {
   display: flex;
   flex-direction: column;
@@ -46,7 +48,7 @@
   }
 
   .app-footer{
-    height: auto;
+    height: 4em;
   }
 }
 

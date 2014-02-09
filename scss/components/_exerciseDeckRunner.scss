@@ -16,8 +16,12 @@
     float: right;
   }
 
-  .nav-region {
+  .navigation {
+    display: flex;
+    flex-direction: row;
     button {
+      flex: 1 1 auto;
+      align-self: stretch;
       $padding: rem-calc(5);
       $bg: $primary-color;
       $radius: true;
