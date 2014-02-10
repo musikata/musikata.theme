@@ -19,34 +19,12 @@
   .tap-view{
     $padding: 4%;
 
-    @media #{$landscape} {
-      flex-direction: row;
-    }
-
-    @media #{$portrait} {
-      flex-direction: column;
-    }
-
-    > div {
-      flex: 1 1 50%;
-      align-self: center;
-    }
-
-    .text-region {
-      order: 0;
-      display: flex;
-      align-items: center;
-    }
-
-    .drum-region {
-      order: 1;
-    }
-
     .instructions {
       margin: $padding;
       font-style: italic;
       list-style: none;
       text-align: center;
+      width: 100%;
 
       li {
         display: none;
@@ -139,7 +117,52 @@
         }
       }
     }
+
+    // Responsive styling for tap view.
+    @media #{$landscape} {
+      flex-direction: row;
+    }
+
+    @media #{$portrait} {
+      flex-direction: column;
+    }
+
+    > div {
+      flex: 1 1 50%;
+      align-self: center;
+    }
+
+    .text-region {
+      order: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .drum-region {
+      order: 1;
+    }
+
+    .drum-container {
+      display: flex;
+      @media #{$landscape} {
+        flex-direction: column;
+      }
+      @media #{$portrait} {
+        flex-direction: row;
+      }
+
+      &:before, &:after {
+        content: "";
+        flex: 1 1 auto;
+      }
+      .positioner {
+        flex: 0 0 auto;
+        align-self: center;
+      }
+    }
   }
+
+
 
   .results-view {
 
