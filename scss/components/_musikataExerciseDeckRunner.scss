@@ -20,6 +20,10 @@
   }
 
   .pass-view, .fail-view {
+
+    padding-left: 1em;
+    padding-right: 1em;
+
     text-align: center;
     display: flex;
     flex-direction: column;
