@@ -5,7 +5,7 @@
 
   .app-body {
     position: relative;
-    .deck {
+    .deck, .fail-view, .pass-view {
       position: absolute;
       top: 0;
       right: 0;
@@ -19,19 +19,22 @@
     }
   }
 
-  .pass-view,.fail-view {
+  .pass-view, .fail-view {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      flex: 0 0 auto;
+    }
+
+    > .sensei-image {
+      height: auto;
+      flex: 1 1 auto;
+    }
 
     h3 {
       @include round-corners(rem-calc(8));
-    }
-
-    .sensei-image {
-      height: rem-calc(250);
-      background-image: url('../img.test/cricket.gif');
-      background-size: auto 80%;
-      background-repeat: no-repeat;
-      background-position: 45% 10%;
     }
   }
 
