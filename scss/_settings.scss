@@ -2,6 +2,7 @@
 $pass_color: #68e86b;
 $fail_color: #df2421;
 $min_slide_size: rem-calc(240);
+$footerHeight: 5em;
 
 // 
 // FOUNDATION SETTINGS
@@ -943,7 +944,7 @@ $topbar-bg-color: #fff;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 45px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar

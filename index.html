@@ -1,11 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js no-flexbox no-flexboxlegacy" lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Foundation | Welcome</title>
 <link rel="stylesheet" href="css/app.css" />
+
+<!--
 <script src="bower_components/modernizr/modernizr.js"></script>
+-->
 
 <style>
 .intro-slide{
@@ -23,48 +26,47 @@
 </style>
 
 </head>
-<body>
 
+
+<body>
 <div id="body-container">
 
-    <nav id="topBar" class="top-bar">
+    <div id="topBar" class="top-bar">
         <ul class="title-area">
             <li class="name">
             <h1>
-                <a id="logo" href="#">
-                    <img src="../img.test/logo.png">
+                <a href="#">
+                    <img id="logo">
                 </a>
             </h1>
             </li>
         </ul>
-    </nav>
-
+    </div>
     <div id="main">
-        <div class="app feel-the-beat-app exercise-deck-runner musikata-exercise-deck-runner" id="content">
-            <header class="app-header">
-            </header>
-
-            <section class="app-body body-region">
-                <div class="deck">
-                    <div class="slide-region">
-                        <div class="slide">
-                            <div class="intro-slide">
-                                <h3>The Sound of One Hand Clapping</h3>
-                                <p>The goal of this kata is to help you feel the beat.</p>
-                                <div class="sensei-image"></div>
-                                <p>Ready? Let's go!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="app-footer">
-                <div class="nav-region"><div><button>start</button></div></div>
-            </footer>
+        <div id="content" class="app musikata-exercise-deck-runner exercise-deck-runner feel-the-beat-app">
+            <div class="app-header"></div>
+            <div class="app-body">
+                Loading...
+            </div>
+            <div class="app-footer">Da Footer</div>
         </div>
     </div>
+
+    <div style="display:none;">
+        <div id="introSlide-1">
+            <div class="intro-slide">
+                <h3>The Sound of One Hand Clapping</h3>
+                <p>The goal of this kata is to help you feel the beat.</p>
+                <div class="sensei-image"></div>
+                <p>Ready? Let's go!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
 </div>
+
 
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>

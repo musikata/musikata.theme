@@ -1,5 +1,6 @@
 @import "../settings";
 @import "../utils";
+@import "appFrameNoFlex";
 
 .app-body, .app-header, .app-footer{
   @include clearfix;
@@ -21,10 +22,10 @@
 }
 
 .app-footer{
-  $minFooterHeight: 5em;
   @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
-  height: $minFooterHeight;
-  min-height: $minFooterHeight;
+  height: $footerHeight;
+  min-height: $footerHeight;
+  max-height: $footerHeight;
 }
 
 .app-body {
@@ -47,10 +48,6 @@
   .app-header {
     min-height: 1em;
     max-height: 2em;
-  }
-
-  .app-footer{
-    height: 4em;
   }
 }
 
