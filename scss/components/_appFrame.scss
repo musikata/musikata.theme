@@ -21,9 +21,10 @@
 }
 
 .app-footer{
+  $minFooterHeight: 5em;
   @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
-  height: 4em;
-  min-height: 4em;
+  height: $minFooterHeight;
+  min-height: $minFooterHeight;
 }
 
 .app-body {
