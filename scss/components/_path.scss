@@ -26,6 +26,12 @@
       list-style: none;
       border-top: thin solid gray;
       padding: 1em;
+      margin: 2em;
+    }
+
+    li:hover{
+      background: #f6f6f6;
+      cursor: pointer;
     }
 
     .stone.scroll {
@@ -104,6 +110,7 @@
         position: relative;
         height: 100%;
         width: 100%;
+        background: white;
 
         .icon-container {
           position: absolute;
@@ -123,6 +130,8 @@
             align-self: center;
             flex: 1 1 auto;
             display: inline-block;
+            height: 65%;
+            width: 65%;
           }
         }
       }
