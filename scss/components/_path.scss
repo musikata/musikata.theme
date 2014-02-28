@@ -1,0 +1,107 @@
+@import "../settings";
+@import "../utils";
+
+.musikata-path {
+  @include round-corners(rem-calc(5));
+  background: white;
+  padding: 2em;
+
+  > .header {
+    text-align: center;
+
+    > .icon {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    > .description {
+      text-align: left;
+      color: gray;
+    }
+  }
+
+  .stone-tree {
+    li {
+      list-style: none;
+      border-top: thin solid gray;
+      padding: 1em;
+    }
+
+    .stone.scroll {
+      $scrollWidth: rem-calc(20);
+      $scrollSize: $scrollWidth 100%;
+      $knobHeight: 6%;
+      position: relative;
+      height: rem-calc(150);
+      width: rem-calc(240);
+      background: url('../img/path/scroll.svg'), url('../img/path/scroll.svg');
+      background-size: $scrollSize, $scrollSize;
+      background-repeat: no-repeat, no-repeat;
+      background-position: left center, right center;
+
+      > .content {
+        position: absolute;
+        top: $knobHeight;
+        left: $scrollWidth;
+        bottom: $knobHeight;
+        right: $scrollWidth;
+        display: flex;
+        flex-direction: column;
+        @include box-shadow(0 2px 2px #ccc);
+      }
+      .body {
+        flex: 1 1 auto;
+        align-self: center;
+      }
+
+      .header, .footer {
+        flex: 0 1 auto;
+        align-self: center;
+        width: 100%;
+        background: $primary-color;
+      }
+
+      .header {
+        padding: .5em;
+        .title {
+          font-weight: bold;
+          color: white;
+          vertical-align: middle;
+        }
+      }
+
+      .body {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .icon-container {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+
+          &:before,&:after {
+            content: "";
+            flex: 1 1 auto;
+          }
+
+          .icon {
+            align-self: center;
+            flex: 1 1 auto;
+            display: inline-block;
+          }
+        }
+      }
+
+      .footer {
+        height: 1em;
+      }
+
+    }
+  }
+}

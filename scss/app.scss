@@ -3,6 +3,8 @@
 @import "utils";
 @import "foundation-icons";
 
+@import "appNoFlex";
+
 @import "components/sensei";
 @import "components/topBar";
 @import "components/appFrame";
@@ -11,7 +13,7 @@
 @import "components/progressBar";
 @import "components/healthBar";
 @import "components/feelTheBeat";
-@import "appNoFlex";
+@import "components/path";
 
 html, body{
   height: 100%;
@@ -20,77 +22,42 @@ html, body{
 body {
   background-color: white;
   position: relative;
-}
-
-#body-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#topBar {
-  flex: 0 0 auto;
-}
-
-#main {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
   background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
   background-size: auto, auto, 100% 100%;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: left 180px, right 50px, center top;
+  background-attachment: fixed, fixed, fixed;
 }
 
-#main {
-  &:before, &:after {
-    content: "";
-    flex: 1 1 0;
-    height: 100%;
-  }
-  &:before {
-    max-height: 1em;
-  }
-  &:after {
-    max-height: 2%;
-  }
+#main{
+  margin-top: rem-calc(25);
 }
 
 #content {
-  flex: 1 1 auto;
-  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
   height: 100%;
   width: 100%;
 }
 
-@media #{$portrait}{
-  #body-container{
+body{
+  @media #{$portrait}{
     min-height: rem-calc(480);
     min-width: rem-calc(320);
   }
-}
 
-@media #{$landscape} {
-  #body-container {
+  @media #{$landscape} {
     min-height: rem-calc(320);
     min-width: rem-calc(480);
   }
 }
 
-@media #{$small-only} {
-  #content {
+#content {
+  @media #{$small-only} {
     max-width: 100%;
   }
-}
 
-@media #{$medium-up} {
-  #main:before, #main:after {
-    min-height: 2%;
-  }
-  #content {
+  @media #{$medium-up} {
     max-width: lower-bound($medium-range);
   }
 }
