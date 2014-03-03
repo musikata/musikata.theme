@@ -2,7 +2,7 @@
 @import "../utils";
 
 .musikata-path {
-  @include round-corners(rem-calc(5));
+  @include round-corners(rem-calc(15));
   background: white;
   padding: 2em;
 
@@ -16,12 +16,12 @@
     }
 
     > .description {
-      text-align: left;
+      text-align: center;
       color: gray;
     }
   }
 
-  .stone-tree {
+  .scroll-tree {
     li {
       list-style: none;
       border-top: thin solid gray;
@@ -34,7 +34,7 @@
       cursor: pointer;
     }
 
-    .stone.scroll {
+    .scroll {
       $scrollWidth: rem-calc(25);
       $scrollSize: $scrollWidth 100%;
       $knobHeight: 6%;
@@ -94,15 +94,31 @@
         flex: 0 1 auto;
         align-self: center;
         width: 100%;
-        background: $primary-color;
+        background: brown;
       }
 
       .header {
         padding: .5em;
         .title {
-          font-weight: bold;
+          margin-top: 0;
+          $strokeWidth: rem-calc(2);
           color: white;
+          font-weight: bold;
           vertical-align: middle;
+          position: relative;
+          padding-bottom: 2*$strokeWidth;
+
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: $strokeWidth;
+            height: $strokeWidth;
+            background-image: url('../img/path/brush-stroke.svg');
+            background-size: 100% $strokeWidth;
+            background-repeat: no-repeat;
+          }
         }
       }
 
@@ -141,6 +157,26 @@
         @include box-shadow(0 $shadowSize $blurSize $spreadSize $shadowColor);
       }
 
+    }
+  }
+
+
+  .stone-tree {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+
+    li {
+      text-align: center;
+      padding: 1em;
+      margin: 2em;
+      background-image: url('../img/path/stone.svg');
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .stone {
     }
   }
 }

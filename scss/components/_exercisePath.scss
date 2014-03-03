@@ -1,0 +1,79 @@
+@import "../settings";
+@import "../utils";
+
+.exercise-path {
+
+  $brushStrokeWidth: rem-calc(2);
+
+  $scrollWidth: rem-calc(25);
+  $scrollSize: 100% $scrollWidth;
+  $knobHeight: 6%;
+
+  $shadowMargin: rem-calc(1);
+  $shadowSize: rem-calc(2);
+  $blurSize: $shadowSize;
+  $spreadSize: .5 * $shadowSize;
+  $shadowColor: #bbb;
+
+  position: relative;
+
+  &:before,&:after {
+    display: block;
+    content: "";
+    height: $scrollWidth;
+    width: 100%;
+    background: url('../img/path/scroll-horizontal.svg');
+    background-repeat: no-repeat;
+    background-size: $scrollSize;
+  }
+
+
+  > .header {
+    text-align: center;
+
+    > .icon {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    > .description {
+      text-align: center;
+      color: gray;
+    }
+  }
+
+  > .content {
+    position: relative;
+    margin-left: $knobHeight;
+    margin-right: $knobHeight;
+    background: white;
+    padding: 1em .5em;
+    @include box-shadow(inset 0 0 $blurSize $spreadSize $shadowColor);
+
+    > .header {
+      text-align: center;
+      .icon {
+        margin: auto;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        width: 65%;
+        margin: auto;
+        height: $brushStrokeWidth;
+        background-image: url('../img/path/brush-stroke-black.svg');
+        background-size: 100% $brushStrokeWidth;
+        background-repeat: no-repeat;
+      }
+    }
+
+  }
+
+  .exercise-table {
+    margin: 0 auto;
+    border: 0;
+  }
+
+}
