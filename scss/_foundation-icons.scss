@@ -31,21 +31,20 @@
 
 @mixin fi-heart {
   @include fi;
-  &:before { 
-    content: "\f159"; 
-  }
+  &:before { content: "\f159"; }
 }
 
 @mixin fi-check {
   @include fi;
-  &:before { 
-    content: "\f126"; 
-  }
+  &:before { content: "\f126"; }
 }
 
-@mixin fi-x{
+@mixin fi-x {
   @include fi;
-  &:before { 
-    content: "\f217"; 
-  }
+  &:before { content: "\f217"; }
+}
+
+@mixin fi-lock {
+  @include fi;
+  &:before { content: "\f16a"; }
 }
