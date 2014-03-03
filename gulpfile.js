@@ -1,12 +1,11 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var browserSync = require('browser-sync');
 
 gulp.task('sass', function(){
   gulp.src('scss/app.scss')
   .pipe(sass({
-    includePaths: ['bower_components/foundation/scss'],
-    errLogToConsole: true
+    loadPath: ['bower_components/foundation/scss'],
   }))
   .pipe(gulp.dest('css'));
 });
