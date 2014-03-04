@@ -7,6 +7,7 @@ gulp.task('sass', function(){
   .pipe(sass({
     loadPath: ['bower_components/foundation/scss'],
   }))
+  .on('error', function(){})
   .pipe(gulp.dest('css'));
 });
 

@@ -1,6 +1,7 @@
 @import "../settings";
 @import "../utils";
 @import "../foundation-icons";
+@import "sensei";
 
 @import url('http://fonts.googleapis.com/css?family=Short+Stack');
 
@@ -76,24 +77,43 @@
 
   }
 
-  .exercise-table {
+  .exercise-list {
+    list-style: none;
     margin: 0 auto;
     width: 100%;
     border: 0;
-    border-collapse: separate;
-    border-spacing: 0 1em;
 
-    tr {
-      background: inherit;
+    li {
+      display: table;
+      margin: auto;
+      width: 96%;
+      //border: thin solid #ccc;
+      background: #f6f6f6;
+      background: #f9f9f9;
+      background: #fcfcfc;
+      background: #fff;
+      border-top: thin solid #999;
+      border-bottom: thin solid #999;
+
       &:hover {
-        background: #f6f6f6;
+        background: #eee;
       }
-    }
+      margin-bottom: 1em;
 
-    td {
-      vertical-align: middle;
-      text-align: center;
-      padding: .5em 0;
+      &:hover {
+        background: #eee;
+      }
+      margin-bottom: 1em;
+
+      > .row-container {
+        display: table-row;
+        > * {
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+          padding: .5em 0;
+        }
+      }
     }
 
     .title {
@@ -112,10 +132,17 @@
       }
     }
 
-    .action .button {
-      @include round-corners();
-      width: 80%;
-      margin: 0;
+    .status {
+      width: 2em;
+    }
+
+    .action {
+      width: 8em;
+      .button {
+        @include round-corners();
+        width: 80%;
+        margin: 0;
+      }
     }
 
     .completed {
@@ -126,12 +153,17 @@
 
       .action .button {
         @include button($bg:white);
-        border: thin solid gray;
+        border: thin solid #ccc;
         margin: 0;
       }
     }
 
     .current {
+      .status {
+        @extend .sensei-image;
+        background-size: contain;
+        background-position: center center;
+      }
     }
 
     .locked {
@@ -143,7 +175,8 @@
 
       .action .button {
         @include button($bg:white);
-        border: thin solid gray;
+        color: gray;
+        border: thin solid #ccc;
         margin: 0;
       }
     }
