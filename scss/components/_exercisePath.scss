@@ -63,15 +63,6 @@
           color: gray;
         }
 
-        &:after {
-          content: "";
-          display: block;
-          margin: auto;
-          height: $brushStrokeWidth;
-          background-image: url('../img/path/brush-stroke-black.svg');
-          background-size: 100% $brushStrokeWidth;
-          background-repeat: no-repeat;
-        }
       }
     }
 
@@ -85,25 +76,22 @@
 
     li {
       display: table;
-      margin: auto;
+      position: relative;
+      margin: 2em auto;
       width: 96%;
       //border: thin solid #ccc;
       background: #f6f6f6;
       background: #f9f9f9;
       background: #fcfcfc;
       background: #fff;
-      border-top: thin solid #999;
-      border-bottom: thin solid #999;
+      border-style: solid;
+      border-color: #ccc;
+      border-width: thin;
+      border-width: 0;
 
       &:hover {
         background: #eee;
       }
-      margin-bottom: 1em;
-
-      &:hover {
-        background: #eee;
-      }
-      margin-bottom: 1em;
 
       > .row-container {
         display: table-row;
