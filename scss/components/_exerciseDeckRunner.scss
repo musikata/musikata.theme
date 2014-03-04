@@ -1,48 +1,117 @@
 @import "../utils";
 @import "../settings";
 
-.exercise-deck-runner{
 
-  .deck, .slide-region, .slide, .exercise-region, .exercise {
-    height: 100%;
+.exercise-deck-frame {
+
+  // Flex styling.
+  display: flex;
+  flex-direction: column;
+  > .header, > .body, > .footer {
+    align-self: stretch;
     width: 100%;
-  }
-
-  .progress-region{
-    float: left;
-  }
-
-  .health-region {
-    float: right;
-  }
-
-  .nav-region {
     height: 100%;
-    width: 100%;
+    flex: 1 1 auto;
+    position: relative;
   }
 
-  .navigation {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    button {
-      flex: 1 1 auto;
-      align-self: stretch;
-      $padding: rem-calc(5);
-      $bg: $primary-color;
-      $radius: true;
-      $fullWidth: false;
-      $disabled: false;
-      $isInput: true;
-      @include button($padding, $bg, $radius, $fullWidth, $disabled, $isInput);
-      margin-left: 1em;
-      margin-bottom: 0;
+  > .header {
+    min-height: 1em;
+    max-height: 2em;
+  }
+  
+  > .footer {
+    flex: 0 1 auto;
+    height: $footerHeight;
+    min-height: $footerHeight;
+    max-height: $footerHeight;
+  }
 
-      &:first-child {
-        margin-left: 0;
+  // Border styling.
+  @include round-top-corners;
+  @include round-bottom-corners;
+  > .header, > .body, > .footer {
+    border: thin solid #bbb;
+  }
+  > .header {
+    @include round-top-corners;
+  }
+  > .footer{
+    @include round-bottom-corners;
+  }
+
+
+  > .header, > .body, > .footer {
+    @include clearfix;
+    padding: .5em;
+  }
+
+  > .header, > .footer {
+    @include linear-gradient(#F5F2EF, #EEEAE7);
+  }
+
+  // Shadows.
+  > .header {
+    @include box-shadow(0 2px 3px rgba(0,0,0, .06));
+  }
+  > .footer {
+    @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
+  }
+
+  // Header elements.
+  > .header {
+    .progress-region{
+      float: left;
+    }
+
+    .health-region {
+      float: right;
+    }
+  }
+
+  // Body elements.
+  > .body {
+    background: white;
+    border-top: none;
+    border-bottom: none;
+
+    .deck, .slide-region, .slide, .exercise-region, .exercise {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  // Footer elements.
+  > .footer {
+
+    .nav-region {
+      height: 100%;
+      width: 100%;
+    }
+
+    .navigation {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      .button {
+        flex: 1 1 auto;
+        align-self: stretch;
+        $padding: rem-calc(5);
+        $bg: $primary-color;
+        $radius: true;
+        $fullWidth: false;
+        $disabled: false;
+        $isInput: true;
+        @include button($padding, $bg, $radius, $fullWidth, $disabled, $isInput);
+        margin-left: 1em;
+        margin-bottom: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
       }
-
     }
   }
 }
