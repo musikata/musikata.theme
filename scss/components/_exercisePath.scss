@@ -106,7 +106,14 @@
 
     .title {
       > span {
+          background-image: url('../img/path/brush-stroke-black.svg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          padding: 1em;
+        color: white;
         font-family: 'Short Stack', cursive;
+        /*
         &:after {
           content: "";
           display: block;
@@ -117,6 +124,7 @@
           background-repeat: no-repeat;
           background-position: center bottom;
         }
+        */
       }
     }
 
