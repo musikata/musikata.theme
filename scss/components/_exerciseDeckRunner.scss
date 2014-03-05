@@ -74,6 +74,17 @@
     background: white;
     border-top: none;
     border-bottom: none;
+    position: relative;
+
+    > .body-region {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom:0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
 
     .deck, .slide-region, .slide, .exercise-region, .exercise {
       height: 100%;
