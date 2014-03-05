@@ -6,7 +6,6 @@
 @import "appNoFlex";
 
 @import "components/sensei";
-@import "components/topBar";
 @import "components/appFrame";
 @import "components/exerciseDeckRunner";
 @import "components/musikataExerciseDeckRunner";
@@ -25,9 +24,43 @@ body {
   position: relative;
 }
 
+
+#topBar{
+  position: relative;
+
+  &:after {
+    $shadow-size: 1px;
+    content: "";
+    position: absolute;
+    bottom: $shadow-size;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    @media #{$medium-up} {
+      @include box-shadow(0 $shadow-size $shadow-size $shadow-size #ccc);
+    }
+  }
+
+  h1 {
+    padding: 5px;
+    height: 100%;
+
+    a {
+      height: 100%;
+    }
+  }
+
+  #logo{
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: inherit;
+  }
+}
+
 #main{
-  margin-top: rem-calc(25);
-  margin-bottom: rem-calc(25);
   background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
   background-size: auto, auto, 100% 100%;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -36,6 +69,8 @@ body {
 }
 
 #content {
+  padding-top: rem-calc(25);
+  padding-bottom: rem-calc(25);
   margin-left: auto;
   margin-right: auto;
   height: 100%;
@@ -58,6 +93,10 @@ body{
   @media #{$small-only} {
     min-height: 100%;
     max-width: 100%;
+
+    > .header, > .footer {
+      @include round-corners(0);
+    }
   }
 
   @media #{$medium-up} {
@@ -72,7 +111,7 @@ body.fit-screen {
   #main {
     margin: 0;
     position: absolute;
-    top: $topbar-height;
+    top: $topbar-height + 2px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -92,6 +131,8 @@ body.fit-screen {
   }
 
   #content {
+    padding-top: 0;
+    padding-bottom: 0;
     flex: 1 1 auto;
     align-self: center;
     height: auto;
