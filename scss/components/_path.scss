@@ -24,9 +24,8 @@
   .scroll-tree {
     li {
       list-style: none;
-      border-top: thin solid gray;
       padding: 1em;
-      margin: 2em;
+      margin: 2em auto;
     }
 
     li:hover{
@@ -46,7 +45,7 @@
       $shadowColor: #bbb;
 
       position: relative;
-      margin: $shadowMargin;
+      margin: $shadowMargin auto;
       height: rem-calc(150);
       width: rem-calc(240);
       background: url('../img/path/scroll.svg'), url('../img/path/scroll.svg');
