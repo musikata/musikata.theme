@@ -41,7 +41,7 @@
   }
 
 
-  > .header, > .body, > .footer {
+  > .header, > .footer {
     @include clearfix;
     padding: .5em;
   }
@@ -84,6 +84,7 @@
       left: 0;
       height: 100%;
       width: 100%;
+      padding: .5em;
     }
 
     .deck, .slide-region, .slide, .exercise-region, .exercise {

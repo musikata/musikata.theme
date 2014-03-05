@@ -88,17 +88,6 @@
           padding: 0 .5em;
         }
 
-        > .body {
-          position: relative;
-          > .body-region {
-            position: absolute;
-            top: .25em;
-            right: .25em;
-            bottom: .25em;
-            left: .25em;
-          }
-        }
-
         > .footer {
           $footerHeight: 3em;
           min-height: $footerHeight;
