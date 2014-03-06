@@ -21,6 +21,9 @@
 
   .pass-view, .fail-view {
 
+    height: 100%;
+    width: 100%;
+
     padding-left: 1em;
     padding-right: 1em;
 
@@ -35,6 +38,7 @@
     > .sensei-image {
       height: auto;
       flex: 1 1 auto;
+      background-size: auto 65%;
     }
 
     h3 {
