@@ -1,0 +1,122 @@
+<!doctype html>
+<htmllang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Path Styling Test</title>
+  <link rel="stylesheet" href="../../css/app.css" />
+  <link rel="icon" href="../../img/favicon.ico" type="image/x-icon" />
+
+  <script src="../../bower_components/modernizr/modernizr.js"></script>
+
+  <style type="text/css">
+
+    .icon {
+      width: 3em;
+      height: 3em;
+    }
+
+    i {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    i.drum {
+      background-image: url('../../img/feelTheBeat/drum.jpg');
+    }
+
+    i.yellow-belt {
+      background-image: url('../../img/path/yellow-belt.svg');
+    }
+
+    i.green-belt {
+      background-image: url('../../img/path/green-belt.svg');
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+  <div id="topBar" class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+      <h1>
+        <a href="#">
+          <div id="logo"></div>
+        </a>
+      </h1>
+      </li>
+    </ul>
+  </div>
+
+  <div id="main">
+    <div id="content" class="">
+
+      <div class="musikata-path">
+        <div class="content-container">
+          <div class="content">
+            <div class="header">
+              <div class="icon"><i class="drum"></i></div>
+              <h3 class="title">Way of the Drum</h3>
+              <div class="description">
+                <p>This path helps you learn to feel the beat.<br/>
+                Beginning exercises start with medium tempos and require less accuracy.</br>
+                As your skills improve you move on to slower tempos, with greater accuracy.
+                </p> 
+              </div>
+
+              <div class="body">
+                <ul>
+                  <li class="scroll-node">
+                  <a href="exercisePath.html">
+                    <div class="scroll">
+                      <div class="content">
+                        <div class="header">
+                          <h5 class="title">Yellow Belt</h5>
+                        </div>
+                        <div class="body">
+                          <div class="icon-container">
+                            <div class="icon"><i class="yellow-belt"></i></div>
+                          </div>
+                        </div>
+                        <div class="footer"></div>
+                      </div>
+                    </div>
+                  </a>
+                  </li>
+
+                  <li class="scroll-node">
+                  <div class="scroll">
+                    <div class="content">
+                      <div class="header">
+                        <h5 class="title">Green Belt</h5>
+                      </div>
+                      <div class="body">
+                        <div class="icon-container">
+                          <div class="icon"><i class="green-belt"></i></div>
+                        </div>
+                      </div>
+                      <div class="footer"></div>
+                    </div>
+                  </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

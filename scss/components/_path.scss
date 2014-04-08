@@ -1,189 +1,345 @@
 @import "../settings";
 @import "../utils";
+@import "../foundation-icons";
 
 .musikata-path {
   @include round-corners(rem-calc(15));
   background: white;
   padding: 2em;
 
-  > .header {
-    text-align: center;
+  > .content-container > .content {
 
-    > .icon {
-      display: inline-block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    > .description {
+    > .header {
       text-align: center;
-      color: gray;
+
+      > .icon {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      > .description {
+        text-align: center;
+        color: gray;
+      }
     }
-  }
 
-  .scroll-node {
-    list-style: none;
-    padding: 1em;
-    margin: 2em auto;
-
-    &:hover{
-      background: #f6f6f6;
-      cursor: pointer;
+    .node {
+      list-style: none;
     }
 
-    .scroll {
-      $scrollWidth: rem-calc(25);
-      $scrollSize: $scrollWidth 100%;
-      $knobHeight: 6%;
+    .scroll-node {
+      padding: 1em;
+      margin: 2em auto;
 
-      $shadowMargin: rem-calc(1);
-      $shadowSize: rem-calc(2);
-      $blurSize: $shadowSize;
-      $spreadSize: .5 * $shadowSize;
-      $shadowColor: #bbb;
+      &:hover{
+        background: #f6f6f6;
+        cursor: pointer;
+      }
 
-      position: relative;
-      margin: $shadowMargin auto;
-      height: rem-calc(150);
-      width: rem-calc(240);
-      background: url('../img/path/scroll.svg'), url('../img/path/scroll.svg');
-      background-size: $scrollSize, $scrollSize;
-      background-repeat: no-repeat, no-repeat;
-      background-position: left center, right center;
+      .scroll {
+        $scrollWidth: rem-calc(25);
+        $scrollSize: $scrollWidth 100%;
+        $knobHeight: 6%;
 
-      > .content {
-        position: absolute;
-        top: $knobHeight;
-        left: $scrollWidth;
-        bottom: $knobHeight;
-        right: $scrollWidth;
-        display: flex;
-        flex-direction: column;
+        $shadowMargin: rem-calc(1);
+        $shadowSize: rem-calc(2);
+        $blurSize: $shadowSize;
+        $spreadSize: .5 * $shadowSize;
+        $shadowColor: #bbb;
 
-        @include box-shadow(0 $shadowSize $blurSize $spreadSize $shadowColor);
+        position: relative;
+        margin: $shadowMargin auto;
+        height: rem-calc(150);
+        width: rem-calc(240);
+        background: url('../img/path/scroll.svg'), url('../img/path/scroll.svg');
+        background-size: $scrollSize, $scrollSize;
+        background-repeat: no-repeat, no-repeat;
+        background-position: left center, right center;
 
-        &:before,&:after{
-          content: "";
+        > .content {
           position: absolute;
-          top: 0;
-          bottom: 0;
-          width: .5 * $shadowSize;
-          opacity: .5;
-        }
+          top: $knobHeight;
+          left: $scrollWidth;
+          bottom: $knobHeight;
+          right: $scrollWidth;
+          display: flex;
+          flex-direction: column;
 
-        &:before {
-          left: -$scrollWidth;
-          @include box-shadow($shadowSize 0 $blurSize $spreadSize $shadowColor);
-        }
+          @include box-shadow(0 $shadowSize $blurSize $spreadSize $shadowColor);
 
-        &:after{
-          right: -$scrollWidth;
-          @include box-shadow($shadowSize 0 $blurSize $spreadSize $shadowColor);
-        }
-
-      }
-      .body {
-        flex: 1 1 auto;
-        align-self: center;
-      }
-
-      .header, .footer {
-        flex: 0 1 auto;
-        align-self: center;
-        width: 100%;
-        background: brown;
-      }
-
-      .header {
-        padding: .5em;
-        > .title {
-          margin-top: 0;
-          $strokeWidth: rem-calc(2);
-          color: white;
-          font-weight: bold;
-          vertical-align: middle;
-          position: relative;
-          padding-bottom: 2*$strokeWidth;
-          text-align: center;
-
-          &:after {
+          &:before,&:after{
             content: "";
             position: absolute;
-            left: 0;
-            right: 0;
-            bottom: $strokeWidth;
-            height: $strokeWidth;
-            background-image: url('../img/path/brush-stroke.svg');
-            background-size: 100% $strokeWidth;
-            background-repeat: no-repeat;
+            top: 0;
+            bottom: 0;
+            width: .5 * $shadowSize;
+            opacity: .5;
           }
+
+          &:before {
+            left: -$scrollWidth;
+            @include box-shadow($shadowSize 0 $blurSize $spreadSize $shadowColor);
+          }
+
+          &:after{
+            right: -$scrollWidth;
+            @include box-shadow($shadowSize 0 $blurSize $spreadSize $shadowColor);
+          }
+
+        }
+        .body {
+          flex: 1 1 auto;
+          align-self: center;
+        }
+
+        .header, .footer {
+          flex: 0 1 auto;
+          align-self: center;
+          width: 100%;
+          background: brown;
+        }
+
+        .header {
+          padding: .5em;
+          > .title {
+            margin-top: 0;
+            $strokeWidth: rem-calc(2);
+            color: white;
+            font-weight: bold;
+            vertical-align: middle;
+            position: relative;
+            padding-bottom: 2*$strokeWidth;
+            text-align: center;
+
+            &:after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: $strokeWidth;
+              height: $strokeWidth;
+              background-image: url('../img/path/brush-stroke.svg');
+              background-size: 100% $strokeWidth;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        .body {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          background: white;
+
+          .icon-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+
+            &:before,&:after {
+              content: "";
+              flex: 1 1 auto;
+            }
+
+            .icon {
+              align-self: center;
+              flex: 1 1 auto;
+              display: inline-block;
+              height: 65%;
+              width: 65%;
+              > i {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+          }
+        }
+
+        .footer {
+          height: 1em;
+          @include box-shadow(0 $shadowSize $blurSize $spreadSize $shadowColor);
+        }
+
+      }
+    }
+
+    .exercise-node {
+
+      height: rem-calc(150);
+      width: rem-calc(150);
+      margin: 2em auto;
+
+      > .exercise-deck-frame {
+        @include transition(all, .5s , ease-out);
+        border: thin solid transparent;
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        > .header {
+          padding: 0 .5em;
+
+          > .title {
+            text-align: left;
+            float: left;
+          }
+
+          > .status {
+            width: 2em;
+            height: 100%;
+            float: right;
+            text-align: right;
+          }
+
+        }
+
+        > .footer {
+          $footerHeight: 3em;
+          min-height: $footerHeight;
+          max-height: $footerHeight;
+        }
+
+      }
+
+      &:hover {
+        > .exercise-deck-frame {
+          border-color: #ccc;
+          @include transition(all, .5s , ease-out);
         }
       }
 
-      .body {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        background: white;
+      &.completed {
+        .status {
+          @include fi-check;
+          color: green;
+        }
 
-        .icon-container {
+        .action {
+          $bg: #51aef0; // not bad.
+          $bg: #ccc; // gray seems best.
+          @include button($padding: rem-calc(5), $bg:$bg);
+          margin-bottom: 0;
+        }
+      }
+
+      &.current {
+        .exercise-deck-frame {
+          border-color: #bbb;
+        }
+
+        &:hover {
+          .exercise-deck-frame {
+            border-color: #333;
+          }
+        }
+
+        .status {
+          @extend .sensei-image;
+          background-size: contain;
+          background-position: center center;
+        }
+      }
+
+      &.locked {
+        .exercise-deck-frame:before {
+          content: "";
           position: absolute;
+          @include round-corners;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
-          display: flex;
-          flex-direction: column;
+          background: #fff;
+          opacity: .55;
+          z-index: 1;
+        }
 
-          &:before,&:after {
-            content: "";
-            flex: 1 1 auto;
-          }
+        .action {
+          $bg: #ccc;
+          @include button($padding: rem-calc(5), $bg:$bg);
+          margin-bottom: 0;
+        }
 
-          .icon {
-            align-self: center;
-            flex: 1 1 auto;
-            display: inline-block;
-            height: 65%;
-            width: 65%;
-            > i {
-              display: block;
-              width: 100%;
-              height: 100%;
-              background-size: contain;
-              background-repeat: no-repeat;
-              margin-left: auto;
-              margin-right: auto;
-            }
-          }
+        .status {
+          @include fi-lock;
+          color: gray;
         }
       }
-
-      .footer {
-        height: 1em;
-        @include box-shadow(0 $shadowSize $blurSize $spreadSize $shadowColor);
-      }
-
     }
+
   }
 
 
-  .stone-tree {
-    width: 65%;
-    margin-left: auto;
-    margin-right: auto;
+  &.scroll-path {
 
-    li {
-      text-align: center;
-      padding: 1em;
-      margin: 2em;
-      background-image: url('../img/path/stone.svg');
-      background-position: center center;
-      background-size: contain;
+    $scrollWidth: rem-calc(25);
+    $scrollSize: 100% $scrollWidth;
+    $knobHeight: 6%;
+
+    $shadowMargin: rem-calc(1);
+    $shadowSize: rem-calc(2);
+    $blurSize: rem-calc(5);
+    $spreadSize: .5 * $shadowSize;
+    $shadowColor: #bbb;
+
+    @include round-corners(0);
+    background: transparent;
+    padding: 0;
+    position: relative;
+
+    &:before,&:after {
+      display: block;
+      content: "";
+      height: $scrollWidth;
+      width: 100%;
+      background: url('../img/path/scroll-horizontal.svg');
       background-repeat: no-repeat;
+      background-size: $scrollSize;
     }
 
-    .stone {
+    > .content-container {
+      position: relative;
+      margin-left: $knobHeight;
+      margin-right: $knobHeight;
+      padding: 1em 10% $shadowSize 10%;
+      background: #fcfcfc;
+      @include box-shadow(inset 0 0 $blurSize $spreadSize $shadowColor);
+
+      > .content {
+
+        margin-top: 1em;
+        padding: 2em 10% 2em;
+        background: white;
+        border-style: solid;
+        border-color: #ccc;
+        border-width: medium medium 0 medium;
+
+        > .header {
+          text-align: center;
+          margin-bottom: 1em;
+          .icon {
+            margin: auto;
+          }
+
+          .description {
+            text-align: center;
+            font-style: italic;
+            color: gray;
+          }
+
+        }
+      }
     }
   }
+
 }

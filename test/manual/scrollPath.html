@@ -28,6 +28,7 @@
 
     i.drum {
       background-image: url('../../img/feelTheBeat/drum.jpg');
+      background-position: center center;
     }
 
     i.yellow-belt {
@@ -59,55 +60,91 @@
   <div id="main">
     <div id="content" class="">
 
-      <div class="musikata-path">
-        <div class="header">
-          <div class="icon"><i class="drum"></i></div>
-          <h3 class="title">Way of the Drum</h3>
-          <div class="description">
-            <p>This path helps you learn to feel the beat.<br/>
-            Beginning exercises start with medium tempos and require less accuracy.</br>
-            As your skills improve you move on to slower tempos, with greater accuracy.
-            </p> 
-        </div>
+      <div class="musikata-path scroll-path">
+        <div class="content-container">
+          <div class="content">
+            <div class="header">
+              <div class="icon"><i class="yellow-belt"></i></div>
+              <h3 class="title">Way of the Drum</br>Yellow Belt</h3>
+              <p class="description">
+              80 - 100 BPM<br/>
+              4 - 8 beats<br/>
+              medium precision
+              </p>
+            </div>
 
-        <div class="body">
-          <ul>
-            <li class="scroll-node">
-            <a href="exercisePath.html">
-              <div class="scroll">
-                <div class="content">
+            <div class="body">
+              <ul>
+
+                <li class="node exercise-node completed">
+                <div class="exercise-deck-frame">
                   <div class="header">
-                    <h5 class="title">Yellow Belt</h5>
+                    <div class="title"><h5>exercise 1</h5></div>
+                    <div class="status"></div>
                   </div>
                   <div class="body">
-                    <div class="icon-container">
-                      <div class="icon"><i class="yellow-belt"></i></div>
+                    <div class="body-region">
+                      <i class="drum"></i>
                     </div>
                   </div>
-                  <div class="footer"></div>
+                  <div class="footer">
+                    <div class="nav-region">
+                      <div class="navigation">
+                        <a class="button action">redo</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </a>
-            </li>
+                </li>
 
-            <li class="scroll-node">
-              <div class="scroll">
-                <div class="content">
+
+                <li class="node exercise-node current">
+                <div class="exercise-deck-frame">
                   <div class="header">
-                    <h5 class="title">Green Belt</h5>
+                    <div class="title"><h5>exercise 2</h5></div>
+                    <div class="status"></div>
                   </div>
                   <div class="body">
-                    <div class="icon-container">
-                      <div class="icon"><i class="green-belt"></i></div>
+                    <div class="body-region">
+                      <i class="drum"></i>
                     </div>
                   </div>
-                  <div class="footer"></div>
+                  <div class="footer">
+                    <div class="nav-region">
+                      <div class="navigation">
+                        <a class="button action" href="http://localhost/musikata/code/musikata.oneHandClapping/build/app/static/">begin</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+                </li>
 
+                <li class="node exercise-node locked">
+                <div class="exercise-deck-frame">
+                  <div class="header">
+                    <div class="title"><h5>exercise 3</h5></div>
+                    <div class="status"></div>
+                  </div>
+                  <div class="body">
+                    <div class="body-region">
+                      <i class="drum"></i>
+                    </div>
+                  </div>
+                  <div class="footer">
+                    <div class="nav-region">
+                      <div class="navigation">
+                        <a class="button action">locked</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+        </div>
       </div>
 
     </div>
