@@ -52,11 +52,14 @@ body {
   }
 
   #logo{
-    height: auto;
-    width: auto;
+    height: 40px;
+    width: 200px;
     max-height: 100%;
     max-width: 100%;
     vertical-align: inherit;
+    background: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -66,6 +69,7 @@ body {
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: left 180px, right 50px, center top;
   background-attachment: fixed, fixed, fixed;
+  min-height: 100%;
 }
 
 #content {
