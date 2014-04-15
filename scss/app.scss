@@ -14,6 +14,7 @@
 @import "components/feelTheBeat";
 @import "components/path";
 @import "components/beltIcons";
+@import "components/loginView";
 
 html, body{
   height: 100%;
@@ -70,6 +71,7 @@ body {
   background-position: left 180px, right 50px, center top;
   background-attachment: fixed, fixed, fixed;
   min-height: 100%;
+  padding: 40px;
 }
 
 #content {
@@ -113,6 +115,7 @@ body.fit-screen {
 
   #main {
     margin: 0;
+    padding: inherit;
     position: absolute;
     top: $topbar-height + 2px;
     right: 0;

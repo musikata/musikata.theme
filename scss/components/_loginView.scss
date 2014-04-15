@@ -1,0 +1,9 @@
+.login-form {
+  text-align: center;
+  @include round-corners(1em);
+  background: white;
+  padding: 2.5em;
+  max-width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+}
