@@ -1,0 +1,150 @@
+@import "../utils";
+
+.dojo-home {
+  @include round-corners(2em);
+  border: thin solid #ccc;
+  background: white;
+
+  > .header {
+    @include  round-top-corners(2em);
+    padding: .5em 0 0 2em;
+    border-bottom: thin solid #ccc;
+    > h2 {
+      font-size: larger;
+    }
+  }
+
+  > .body {
+    padding: 1em 2em;
+  }
+
+  .paths-view {
+    margin-left: auto;
+    margin-right: auto;
+
+    > .header {
+      text-align: center;
+    }
+
+    > .body {
+      > .paths-list {
+
+        display: flex;
+        flex-direction: row;
+
+        > li {
+          flex: 1 1 50%;
+          align-self: center;
+          max-width: 50%;
+          @include round-corners;
+          list-style: none;
+          border: thin solid #999;
+          padding: 1em;
+          @include box-shadow(0 2px 2px 2px #ccc);
+        }
+
+        .path-launcher {
+          position: relative;
+          height: 250px;
+          > .content-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            > .content {
+              width: 100%;
+              height: 100%;
+              padding: 1em;
+              display: flex;
+              flex-direction: column;
+
+              > .header, .footer {
+                flex: 0 1 auto;
+              }
+
+              > .body {
+                flex: 1 1 auto;
+              }
+
+              > .header {
+                text-align: center;
+                position: relative;
+
+                &:after {
+                  $strokeWidth: rem-calc(2);
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  bottom: $strokeWidth;
+                  height: $strokeWidth;
+                  background-image: url('../img/path/brush-stroke-black.svg');
+                  background-size: 100% $strokeWidth;
+                  background-repeat: no-repeat;
+                }
+
+              }
+
+              > .body {
+                position: relative;
+                width: 100%;
+                background: white;
+
+                > .content-container {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+
+                  > .icon-container {
+                    position: relative;
+                    width: 100%;
+                    height: 65%;
+                    display: flex;
+                    flex-direction: column;
+
+                    &:before,&:after {
+                      content: "";
+                      flex: 1 1 auto;
+                    }
+
+                    .icon {
+                      align-self: center;
+                      flex: 1 1 auto;
+                      display: inline-block;
+                      height: 65%;
+                      width: 65%;
+                      > i {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        margin-left: auto;
+                        margin-right: auto;
+                      }
+                    }
+                  }
+
+                  > .description {
+                    text-align: center;
+                  }
+                }
+              }
+
+              > .footer {
+                text-align: center;
+                > .button {
+                  margin: 0;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
