@@ -66,13 +66,13 @@ body {
 }
 
 #main{
-  background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
-  background-size: auto, auto, 100% 100%;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: left 180px, right 50px, center top;
-  background-attachment: fixed, fixed, fixed;
+  background: url("../img/mountains.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
   min-height: 100%;
-  padding: 40px;
+  //padding: 40px;
 }
 
 #content {
@@ -107,6 +107,17 @@ body{
 
   @media #{$medium-up} {
     max-width: lower-bound($medium-range);
+  }
+}
+
+#main {
+  @media #{$medium-up} {
+  background: url('../img/leftBranch.png'), url('../img/rightBranch.png'), url("../img/mountains.jpg");
+  background-size: auto, auto, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: left 180px, right 50px, center top;
+  background-attachment: fixed, fixed, fixed;
+  //padding: 40px;
   }
 }
 
