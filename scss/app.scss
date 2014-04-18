@@ -72,7 +72,6 @@ body {
   background-position: center top;
   background-attachment: fixed;
   min-height: 100%;
-  //padding: 40px;
 }
 
 #content {
@@ -81,6 +80,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+#footer {
+  margin: 2em auto 0 auto;
+  text-align: center;
+  padding: 0 0 1em 0;
+
+  > a {
+    margin: 0 1em;
+  }
 }
 
 body{
