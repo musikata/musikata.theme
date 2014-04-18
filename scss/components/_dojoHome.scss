@@ -36,6 +36,16 @@
         background-position: left;
         background-repeat: no-repeat;
         @include box-shadow(inset 0 0 3px 3px #666);
+
+        > .attribution {
+          position: absolute;
+          font-size: smaller;
+          right: .5em;
+          bottom: .5em;
+          > a {
+            color: blue;
+          }
+        }
       }
     }
   }
@@ -52,110 +62,11 @@
       @include round-corners(2em);
       padding: 2em;
       background: white;
-    }
-  }
 
-  .paths-view {
-    margin-left: auto;
-    margin-right: auto;
-
-    > .header {
-      margin-bottom: 1em;
-    }
-
-    > .body {
-      > .paths-list {
-        list-style: none;
-
-        > .path-item {
-          $height: rem-calc(250px);
-          $width: rem-calc(240px);
-          $headerHeight: rem-calc(65px); 
-          $footerHeight: rem-calc(70px);
-          $bodyHeight: $height - ($headerHeight + $footerHeight);
-
-          @include round-corners(.15 * $width);
-          border: thin solid #c1c1c1;
-          position: relative;
-          height: $height;
-          width: $width;
-
-          > .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: $headerHeight;
-            padding: rem-calc(15px) 1em 0;
-            @include round-top-corners;
-
-            > .title {
-              text-align: center;
-            }
-
-          }
-
-          > .body {
-            position: absolute;
-            top: $headerHeight;
-            left: 0;
-            right: 0;
-            height: $bodyHeight;
-            background: white;
-
-            > .icon-container {
-              position: relative;
-              width: 100%;
-              height: 65%;
-              display: flex;
-              flex-direction: column;
-
-              &:before,&:after {
-                content: "";
-                flex: 1 1 auto;
-              }
-
-              .icon {
-                align-self: center;
-                flex: 1 1 auto;
-                display: inline-block;
-                height: 65%;
-                width: 65%;
-                > i {
-                  display: block;
-                  width: 100%;
-                  height: 100%;
-                  background-size: contain;
-                  background-repeat: no-repeat;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-              }
-            }
-
-            > .description {
-              text-align: center;
-            }
-          }
-
-          > .footer {
-            position: absolute;
-            bottom: 0;
-            height: $footerHeight;
-            left: 0;
-            right: 0;
-            @include round-bottom-corners;
-            padding: .5em;
-            text-align: center;
-            > .button {
-              @include round-corners(2em);
-              width: 84%;
-              padding: .75rem 2.25rem;
-              margin: 0;
-            }
-          }
-        }
+      > .header {
+        margin-bottom: 2em;
       }
     }
   }
+
 }

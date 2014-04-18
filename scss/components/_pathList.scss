@@ -1,0 +1,99 @@
+.path-list {
+  list-style: none;
+
+  > .path-item {
+    $height: rem-calc(250px);
+    $width: rem-calc(240px);
+    $headerHeight: rem-calc(65px); 
+    $footerHeight: rem-calc(70px);
+    $bodyHeight: $height - ($headerHeight + $footerHeight);
+
+    @include round-corners(.15 * $width);
+    border: 3px solid #c1c1c1;
+    @include box-shadow(1px 1px 2px 2px #ccc);
+    position: relative;
+    height: $height;
+    width: $width;
+
+    &:hover {
+      border-color: #999;
+      background: #fdfdfd;
+    }
+
+    > .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $headerHeight;
+      padding: rem-calc(15px) 1em 0;
+      @include round-top-corners;
+
+      > .title {
+        text-align: center;
+      }
+
+    }
+
+    > .body {
+      position: absolute;
+      top: $headerHeight;
+      left: 0;
+      right: 0;
+      height: $bodyHeight;
+      background: white;
+
+      > .icon-container {
+        position: relative;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        flex-direction: column;
+
+        &:before,&:after {
+          content: "";
+          flex: 0 1 auto;
+        }
+
+        .icon {
+          align-self: center;
+          flex: 1 1 auto;
+          display: inline-block;
+          height: 65%;
+          width: 65%;
+          > i {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      > .description {
+        text-align: center;
+      }
+    }
+
+    > .footer {
+      position: absolute;
+      bottom: 0;
+      height: $footerHeight;
+      left: 0;
+      right: 0;
+      @include round-bottom-corners;
+      padding: .5em;
+      text-align: center;
+      > .button {
+        @include round-corners(2em);
+        width: 84%;
+        padding: .75rem 2.25rem;
+        margin: 0;
+      }
+    }
+  }
+}
