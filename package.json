@@ -2,14 +2,18 @@
   "name": "foundation-libsass-template",
   "version": "0.0.1",
   "devDependencies": {
-    "node-sass": "~0.7.0",
+    "browser-sync": "~0.6.2",
+    "connect": "^2.19.4",
     "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-sass": "~0.8.0",
-    "grunt-contrib-connect": "~0.5.0",
     "gulp": "~3.5.2",
+    "gulp-livereload": "^2.1.0",
+    "gulp-plumber": "^0.6.2",
+    "gulp-ruby-sass": "~0.4.0",
     "gulp-sass": "~0.7.1",
-    "browser-sync": "~0.6.2",
-    "gulp-ruby-sass": "~0.4.0"
+    "gulp-watch": "^0.6.5",
+    "node-sass": "~0.7.0"
   }
 }
