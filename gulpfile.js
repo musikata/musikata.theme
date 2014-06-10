@@ -29,6 +29,11 @@ gulp.task('livereload', function() {
   gulp.src('css/**/*.css')
   .pipe(watch())
   .pipe(livereload())
+
+  // Do livereload on html change.
+  gulp.src('test/**/*.html')
+  .pipe(watch())
+  .pipe(livereload())
   
 });
 
