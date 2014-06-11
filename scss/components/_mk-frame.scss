@@ -1,0 +1,38 @@
+@import "../settings";
+
+
+.mk-frame {
+  color: #333;
+  @include box-shadow(0 2px 2px rgba(0,0,0,.5));
+  @include round-top-corners(8px);
+  @include round-bottom-corners(8px);
+
+  > .mk-frame-body, .mk-frame-header, .mk-frame-footer{
+    @include clearfix;
+    border: thin solid #bbb;
+    padding: .5em;
+  }
+
+  > .mk-frame-header, .mk-frame-footer {
+    @include linear-gradient(#F5F2EF, #EEEAE7);
+  }
+
+  .mk-frame-header {
+    @include box-shadow(0 2px 3px rgba(0,0,0, .06));
+    @include round-top-corners(8px);
+  }
+
+  .mk-frame-body {
+    background: white;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .mk-frame-footer {
+    @include box-shadow(0 -2px 3px rgba(0,0,0,.06));
+    @include round-bottom-corners(8px);
+    height: $footerHeight;
+    max-height: $footerHeight;
+    min-height: $footerHeight;
+  }
+}
