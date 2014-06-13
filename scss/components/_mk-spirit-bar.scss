@@ -1,33 +1,49 @@
+/*
+Spirit bar is designed like this:
+- container div that sets height.
+- power diameter is full height
+- right side of progress bar power diameter - a little bit.
+- left side of power bar is 0 (power bar width scales)
+*/
 .mk-spirit-bar {
+  $circleDiameter: 50px;
   width: 200px;
-  height: 50px;
+  height: $circleDiameter;
   position: relative;
 
   > .progress, > .power-circle {
     position: absolute;
-    background-color: khaki;
-    border: thin solid gray;
-  }
-
-  > .progress {
-    @include round-left-corners();
-    top: 10px;
-    bottom: 10px;
-    left: 0;
-    width: 85%;
-    border-right: 0;
-    z-index: 100;
+    background-color: white;
+    border-style: solid;
+    border-color: #ccc;
+    border-width: 3px;
   }
 
   > .power-circle {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 83%;
     right: 0;
+    width: $circleDiameter;
     @include round-corners(50%);
-    border: thin solid gray;
     z-index: 10;
+  }
+
+  > .progress {
+    $padding: 10px;
+    top: $padding;
+    bottom: $padding;
+    left: 0;
+    right: $circleDiameter - (.65 * $padding);
+    border-right: 0;
+    z-index: 100;
+    @include round-left-corners(10px);
+    overflow: hidden;
+
+    > .fill {
+      height: 100%;
+      background-color: $primary-color;
+    }
   }
 
 }
