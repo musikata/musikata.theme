@@ -1,0 +1,14 @@
+.mk-kata-runner {
+  .mk-kata-runner-status-bar {
+    > .level, > .spirit, > .breaks {
+      display: inline-block;
+    }
+
+    > .spirit {
+      > .mk-spirit-bar {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
