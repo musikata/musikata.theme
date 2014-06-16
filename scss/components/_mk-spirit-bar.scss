@@ -27,6 +27,10 @@ Spirit bar is designed like this:
     width: $circleDiameter;
     @include round-corners(50%);
     z-index: 10;
+    background-size: .7 * $circleDiameter;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../img/kataRunner/closedFist.png');
   }
 
   > .progress {
