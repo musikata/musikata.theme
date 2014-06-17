@@ -10,5 +10,35 @@
         vertical-align: middle;
       }
     }
+
+    > .breaks {
+      display: inline-block;
+      vertical-align: middle;
+
+      > ul {
+        display: inline-block;
+        margin: 0;
+
+        > li {
+          list-style-type: none;
+          display: inline-block;
+          width: 30px;
+          height: 100px;
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat;
+
+          &.broken {
+            background-image: url('../img/kataRunner/plank-broken.png');
+          }
+          &.unbroken.active {
+            background-image: url('../img/kataRunner/plank-unbroken-active.png');
+          }
+          &.unbroken {
+            background-image: url('../img/kataRunner/plank-unbroken-inactive.png');
+          }
+        }
+      }
+    }
   }
 }
