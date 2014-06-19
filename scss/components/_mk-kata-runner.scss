@@ -1,29 +1,23 @@
 .mk-kata-runner {
-  .mk-kata-runner-status-bar {
-    > .level, > .spirit, > .breaks {
-      display: inline-block;
-    }
+  $rowHeight: 85px;
+  $labelHeight: 15px;
+  $elementHeight: $rowHeight - $labelHeight;
 
-    > .spirit {
-      > .mk-spirit-bar {
-        display: inline-block;
-        vertical-align: middle;
-      }
-    }
+  .mk-kata-runner-status-bar.row {
+    height: 85px;
 
-    > .breaks {
-      display: inline-block;
-      vertical-align: middle;
+    .breaks {
 
       > ul {
+        height: $elementHeight;
         display: inline-block;
         margin: 0;
 
         > li {
           list-style-type: none;
           display: inline-block;
-          width: 30px;
-          height: 100px;
+          width: $elementHeight * .33;
+          height: $elementHeight;
           background-size: contain;
           background-position: center center;
           background-repeat: no-repeat;
