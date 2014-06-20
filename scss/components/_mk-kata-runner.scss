@@ -1,35 +1,81 @@
 .mk-kata-runner {
-  $rowHeight: 85px;
-  $labelHeight: 15px;
-  $elementHeight: $rowHeight - $labelHeight;
+  $statusBarHeight: 65px;
+  $spiritBarHeight: 50px;
 
-  .mk-kata-runner-status-bar.row {
-    height: 85px;
+  .mk-kata-runner-status-bar {
+    display: table;
+    height: $statusBarHeight;
+    width: 100%;
+    font-size: 22px;
 
-    .breaks {
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+      padding: 0 10px;
+    }
 
-      > ul {
-        height: $elementHeight;
-        display: inline-block;
-        margin: 0;
+    .level-col {
+      width: 19%;
 
-        > li {
-          list-style-type: none;
-          display: inline-block;
-          width: $elementHeight * .33;
-          height: $elementHeight;
-          background-size: contain;
-          background-position: center center;
-          background-repeat: no-repeat;
+      .level {
+        text-transform: uppercase;
+        color: gray;
+      }
+    }
 
-          &.broken {
-            background-image: url('../img/kataRunner/plank-broken.png');
-          }
-          &.unbroken.active {
-            background-image: url('../img/kataRunner/plank-unbroken-active.png');
-          }
-          &.unbroken {
-            background-image: url('../img/kataRunner/plank-unbroken-inactive.png');
+    .spirit-col {
+
+      .mk-spirit-bar {
+        width: 100%;
+        height: $spiritBarHeight;
+      }
+    }
+
+    .breaks-col {
+      width: 19%;
+
+      .breaks {
+        height: 100%;
+        width: 100%;
+
+        > ul {
+          display: table;
+          height: 100%;
+          width: 100%;
+          margin: 0;
+
+          > li {
+            list-style-type: none;
+            display: table-cell;
+            height: 100%;
+            padding: 0 5px;
+
+            &:after {
+              content: " ";
+              height: 100%;
+              width: 100%;
+              display: block;
+              background-size: contain;
+              background-position: center center;
+              background-repeat: no-repeat;
+            }
+
+            &.broken {
+              &:after { 
+                background-image: url('../img/kataRunner/plank-broken.png');
+              }
+            }
+            &.unbroken.active {
+              &:after {
+                background-image: url('../img/kataRunner/plank-unbroken-active.png');
+              }
+            }
+            &.unbroken {
+              &:after {
+                background-image: url('../img/kataRunner/plank-unbroken-inactive.png');
+              }
+            }
           }
         }
       }
