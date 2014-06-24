@@ -34,7 +34,9 @@ Spirit bar is designed like this:
   }
 
   > .progress {
+    $fillColor: $primary-color;
     $padding: 10px;
+    $fillBufferWidth: 10px;
     top: $padding;
     bottom: $padding;
     left: 0;
@@ -44,9 +46,25 @@ Spirit bar is designed like this:
     @include round-left-corners(10px);
     overflow: hidden;
 
-    > .fill {
-      height: 100%;
-      background-color: $primary-color;
+    > .fill-buffer, .fill-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    > .fill-buffer {
+      left: 0;
+      width: $fillBufferWidth;
+      background-color: $fillColor;
+    }
+
+    > .fill-container {
+      left: $fillBufferWidth;
+      right: 4px;
+      > .fill {
+        height: 100%;
+        background-color: $fillColor;
+      }
     }
   }
 
