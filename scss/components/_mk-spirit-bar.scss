@@ -5,10 +5,14 @@ Spirit bar is designed like this:
 - right side of progress bar power diameter - a little bit.
 - left side of power bar is 0 (power bar width scales)
 */
+
 .mk-spirit-bar {
-  $circleDiameter: 50px;
+  $fillColor: $primary-color;
+
+  $circleWidth: 50px;
+  $circleHeight: 50px;
   width: 200px;
-  height: $circleDiameter;
+  height: $circleHeight;
   position: relative;
 
   > .progress, > .power-circle {
@@ -24,23 +28,33 @@ Spirit bar is designed like this:
     top: 0;
     bottom: 0;
     right: 0;
-    width: $circleDiameter;
+    width: $circleWidth;
     @include round-corners(50%);
     z-index: 10;
-    background-size: .7 * $circleDiameter;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url('../img/kataRunner/closedFist.png');
+
+    > .fist {
+      width: 100%;
+      height: 100%;
+      background-size: .65 * $circleWidth;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url('../img/kataRunner/closedFist.png');
+    }
+
+    &.active {
+      //background-color: $fillColor;
+      background: radial-gradient(ellipse at center, #7db9e8 0%,#2989d8 50%,#e96a68 80%);
+      @include single-transition(all, 1000ms);
+    }
   }
 
   > .progress {
-    $fillColor: $primary-color;
     $padding: 10px;
     $fillBufferWidth: 10px;
     top: $padding;
     bottom: $padding;
     left: 0;
-    right: $circleDiameter - (.65 * $padding);
+    right: $circleWidth - (.65 * $padding);
     border-right: 0;
     z-index: 100;
     @include round-left-corners(10px);
@@ -60,7 +74,7 @@ Spirit bar is designed like this:
 
     > .fill-container {
       left: $fillBufferWidth;
-      right: 4px;
+      right: 0px;
       > .fill {
         height: 100%;
         background-color: $fillColor;
